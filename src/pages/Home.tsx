@@ -1,3 +1,4 @@
+import campaignPhoto from './campaign.jpg';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
@@ -16,6 +17,8 @@ export default function Home() {
           style={{ background: 'radial-gradient(60% 60% at 70% 30%,#a3141f 0%,#7a0f1c 25%,#0a0a0a 70%)' }}
           aria-hidden="true"
         />
+        <img src={campaignPhoto} alt="" fetchPriority="high" className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[70%_center] opacity-60" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-vanta-black via-transparent to-vanta-black/30" />
         <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 12%)' }} aria-hidden="true" />
         <div className="relative mx-auto max-w-[1600px] px-4 md:px-8 pt-24 md:pt-40 pb-16 grid md:grid-cols-12 gap-6">
           <Reveal className="md:col-span-12">
