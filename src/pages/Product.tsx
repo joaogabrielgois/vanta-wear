@@ -60,11 +60,8 @@ export default function Product() {
 
   // Validação em tempo real da quantidade
   const qtyError = size ? validateLine(product, color, size, qty) : null;
-  const images = [
-    { label: 'Frente', style: product.visual },
-    { label: 'Costas', style: `linear-gradient(${200 + imgIndex * 40}deg,#0a0a0a 0%,${product.colors[0].hex} 90%)` },
-    { label: 'Detalhe', style: `radial-gradient(circle at ${40 + imgIndex * 10}% 35%,#7a0f1c 0%,#0a0a0a 70%)` },
-  ];
+  const photo = `url(${import.meta.env.BASE_URL}products/${product.slug}.jpg) center / cover no-repeat`;
+  const images = [{ label: 'Vista do produto', style: photo }, { label: 'Detalhe ampliado', style: photo.replace('/ cover', '/ 200%') }];
 
   return (
     <div className="mx-auto max-w-[1600px] px-4 md:px-8 py-12">
