@@ -44,7 +44,7 @@ export default function Cart() {
             return (
               <li key={line.key} className="py-8 grid grid-cols-[112px_1fr] md:grid-cols-[160px_1fr] gap-6">
                 <Link to={`/produto/${product.slug}`} className="aspect-[3/4] block" aria-label={`Ver ${product.name}`}>
-                  <span className="block h-full w-full" style={{ background: product.visual }} />
+                  <img src={`${import.meta.env.BASE_URL}products/${product.slug}.jpg`} alt={product.name} className="block h-full w-full object-cover" />
                 </Link>
                 <div className="flex flex-col gap-4">
                   <div className="flex justify-between gap-4">

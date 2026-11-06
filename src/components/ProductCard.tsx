@@ -23,11 +23,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
     <article className={`group relative ${offset}`}>
       <Link to={`/produto/${product.slug}`} className="block" aria-label={`Ver ${product.name}`}>
         <div className="relative aspect-[3/4] overflow-hidden bg-vanta-ink">
-          <div
-            className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.06] motion-reduce:transform-none"
-            style={{ background: product.visual }}
-            aria-hidden="true"
-          />
+          <img src={`${import.meta.env.BASE_URL}products/${product.slug}.jpg`} alt={product.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06] motion-reduce:transform-none" />
           <span className="absolute inset-0 flex items-end p-4 font-display text-[clamp(3rem,7vw,6rem)] leading-none text-vanta-white/10 select-none" aria-hidden="true">
             {product.category.slice(0, 3).toUpperCase()}
           </span>
